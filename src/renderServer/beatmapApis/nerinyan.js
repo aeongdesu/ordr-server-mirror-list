@@ -2,11 +2,10 @@ const { default: axios } = require("axios")
 
 module.exports = async beatmapsetId => {
     try {
-        // currently NeriNyan didn't deployed search beatmapset id route to main server(api.nerina.pw), so I'll use sub server(xiiov.com) temporarily.
-        let { data: nerinyanApiResponse } = await axios.get(`https://xiiov.com/search/beatmapset/${beatmapsetId}`, { timeout: 10000 })
+        let { data: nerinyanApiResponse } = await axios.get(`https://api.nerinyan.moe/search/beatmapset/${beatmapsetId}`, { timeout: 10000 })
         return {
             apiResponse: nerinyanApiResponse,
-            downloadUrl: `https://nerina.pw/d/direct/${beatmapsetId}`,
+            downloadUrl: `https://api.nerinyan.moe/d/${beatmapsetId}`,
             filename: beatmapsetId,
             lastBeatmapUpdate: nerinyanApiResponse.last_updated.replace(" ", "T")
         }
