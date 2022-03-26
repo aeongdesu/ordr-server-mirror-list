@@ -10,7 +10,7 @@ module.exports = async beatmapsetId => {
             lastBeatmapUpdate: nerinyanApiResponse.last_updated.replace(" ", "T")
         }
     } catch (err) {
-        console.log("[renderServer] Got some problems with the NeriNyan API: " + err)
+        console.log("[renderServer] Got some problems with the nerinyan.moe API: " + err)
         return "connect error"
     }
 }
