@@ -13,7 +13,7 @@ module.exports = async beatmapsetId => {
             lastBeatmapUpdate: new Date(sayobotApiResponse.last_update).toISOString().slice(0, 13)
         }
     } catch (err) {
-        console.log("[renderServer] Got some problems with the sayobot API: " + err)
+        console.log("[renderServer] Got some problems with the sayobot.cn API: " + err)
         return "connect error"
     }
 }
